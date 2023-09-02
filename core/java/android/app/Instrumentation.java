@@ -65,6 +65,7 @@ import java.util.List;
 import java.util.concurrent.TimeoutException;
 
 import com.android.internal.util.custom.AttestationHooks;
+import com.android.internal.util.custom.GamesPropsUtils;
 import com.android.internal.util.custom.PixelPropsUtils;
 
 /**
@@ -1247,7 +1248,8 @@ public class Instrumentation {
         app.attach(context);
         String packageName = context.getPackageName();
         AttestationHooks.setProps(context);
-        PixelPropsUtils.setProps(packageName);
+        GamesPropsUtils.setProps(context);
+        PixelPropsUtils.setProps(context);
         return app;
     }
     
@@ -1267,7 +1269,8 @@ public class Instrumentation {
         app.attach(context);
         String packageName = context.getPackageName();
         AttestationHooks.setProps(context);
-        PixelPropsUtils.setProps(packageName);
+        GamesPropsUtils.setProps(context);
+        PixelPropsUtils.setProps(context);
         return app;
     }
 
